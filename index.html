@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invitación de Cumpleaños</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body,
+        html {
+            width: 100%;
+            height: 100%;
+            font-family: 'Arial', sans-serif;
+            background-color: #f2f2f2;
+            /* gris claro */
+        }
+
+        #startScreen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 30;
+            flex-direction: column;
+        }
+
+        #startBtn {
+            padding: 20px 30px;
+            font-size: 20px;
+            background-color: #8ACE00;
+            color: black;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+        }
+
+        #intro {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 20;
+            background: black;
+            display: none;
+            opacity: 1;
+            transition: opacity 2.5s ease;
+        }
+
+        #intro.fade-out {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        #intro video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .main-content {
+            opacity: 0;
+            transition: opacity 2.5s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: 100vh;
+            padding: 20px;
+        }
+
+        .visible {
+            opacity: 1;
+        }
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            max-width: 90%;
+        }
+
+        h1 {
+            color: #8ACE00;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #8ACE00;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+
+        #startScreen h2 {
+            color: #8ACE00;
+        }
+
+        #popupOverlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+        }
+
+        #popupCard {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 30px;
+            width: 90%;
+            max-width: 500px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            animation: popIn 0.5s ease;
+            position: relative;
+        }
+
+        .popupBtn {
+            background-color: #A8E6A1;
+            padding: 20px;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            animation: subtleBounce 3s infinite;
+            text-decoration: none;
+            color: black;
+        }
+
+        .popupBtn:nth-child(2) {
+            background-color: #B4F0B3;
+        }
+
+        .popupBtn:nth-child(3) {
+            background-color: #C6F5C2;
+        }
+
+        .popupBtn:nth-child(4) {
+            background-color: #D9FCD9;
+        }
+
+        .popupBtn:nth-child(5) {
+            background-color: #E2FFE2;
+        }
+
+        .popupBtn:nth-child(6) {
+            background-color: #F0FFF0;
+        }
+
+        .popupBtn i {
+            font-size: 28px;
+        }
+
+        .popupLabel {
+            margin-top: 8px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        #closePopup {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: red;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        @keyframes popIn {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes subtleBounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-2px);
+            }
+        }
+    </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div id="startScreen">
+        <h2>Welcome!</h2>
+        <br>
+        <button id="startBtn">start</button>
+    </div>
+
+    <div id="intro">
+        <video id="introVideo" playsinline>
+            <source src="video4.mp4" type="video/mp4" />
+            Tu navegador no soporta video.
+        </video>
+    </div>
+
+    <div class="main-content" id="content">
+        <div class="card">
+            <h1>Happy Quarter Life Crisis 🚬</h1>
+            <br>
+            <h2>- Mike's Bday - </h2>
+            <br>
+            <p><strong>Date:</strong> 8/16/25</p>
+            <br>
+            <p><strong>Hour:</strong> 3 pm to 4 am</p>
+            <br>
+            <p><strong>Place:</strong> <a href="https://g.co/kgs/9PbkDiH" target="_blank">Quinta Meade, Marin, NL</a>
+            </p>
+            <br>
+            <p>was worth it cuz it was a fucking good night</p>
+            <br>
+            <a class="btn" href="#" onclick="showPopup()">I'm in</a>
+        </div>
+    </div>
+
+    <div id="popupOverlay">
+        <div id="popupCard">
+            <button id="closePopup">X</button>
+            <a class="popupBtn" href="https://www.innovasport.com/ropa-para-nadar/c/100020000010000000?srsltid=AfmBOorwLx3Q1nDoffgX3Ww_KBCWPdlLJ1_OKOy3OHz8WSiWgo9np2lS" target="_blank"><i class="fas fa-swimmer"></i>
+                <div class="popupLabel">Pool</div>
+            </a>
+            <a class="popupBtn" href="https://www.pinterest.com/redesignia/brat-and-indie-sleaze-mood-board/" target="_blank"><i class="fas fa-tshirt"></i>
+                <div class="popupLabel">Mood</div>
+            </a>
+            <a class="popupBtn" href="https://open.spotify.com/playlist/5mZoCl9CMoUYwih4VXvBKo?si=bcfqPDvYRjm5AdGYWX357A" target="_blank"><i class="fas fa-music"></i>
+                <div class="popupLabel">Vibe</div>
+            </a>
+            <a class="popupBtn" href="https://es.wikipedia.org/wiki/Chili_dog" target="_blank"><i class="fas fa-hamburger"></i>
+                <div class="popupLabel">Grill</div>
+            </a>
+            <a class="popupBtn" href="https://www.mirockola.com.mx/rockolas-karaokef933.html?sort=pd.name&order=DESC" target="_blank"><i class="fas fa-microphone"></i>
+                <div class="popupLabel">Karaoke</div>
+            </a>
+            <a class="popupBtn" href="https://www.heb.com.mx/vinos-licores-y-cervezas?srsltid=AfmBOootQGlSyEvFftdvURGAllLQePrK6GMLWrBJfdpv9cVNZeBXS8zU" target="_blank"><i class="fas fa-cocktail"></i>
+                <div class="popupLabel">Drink</div>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        const startScreen = document.getElementById('startScreen');
+        const startBtn = document.getElementById('startBtn');
+        const video = document.getElementById('introVideo');
+        const intro = document.getElementById('intro');
+        const content = document.getElementById('content');
+
+        startBtn.addEventListener('click', () => {
+            startScreen.style.display = 'none';
+            intro.style.display = 'block';
+            video.play();
+        });
+
+        video.addEventListener('ended', () => {
+            intro.classList.add('fade-out');
+            setTimeout(() => {
+                content.classList.add('visible');
+            }, 1500);
+        });
+
+        setTimeout(() => {
+            if (intro.style.display !== 'none') {
+                intro.classList.add('fade-out');
+                content.classList.add('visible');
+            }
+        }, 17000);
+
+        function showPopup() {
+            document.getElementById('popupOverlay').style.display = 'flex';
+        }
+
+        document.getElementById('closePopup').addEventListener('click', () => {
+            document.getElementById('popupOverlay').style.display = 'none';
+        });
+    </script>
+</body>
+
+</html>
