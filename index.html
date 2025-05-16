@@ -137,51 +137,33 @@
             animation: popIn 0.5s ease;
             position: relative;
         }
+.popupBtn {
+    background-color: #7FFF91; /* verde brat (ajústalo si quieres otro tono) */
+    padding: 20px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    animation: subtleBounce 3s infinite;
+    text-decoration: none;
+    color: white;
+}
 
-        .popupBtn {
-            background-color: #A8E6A1;
-            padding: 20px;
-            border-radius: 15px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-            animation: subtleBounce 3s infinite;
-            text-decoration: none;
-            color: black;
-        }
+.popupBtn i {
+    font-size: 28px;
+    color: white;
+}
 
-        .popupBtn:nth-child(2) {
-            background-color: #B4F0B3;
-        }
+.popupLabel {
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+}
 
-        .popupBtn:nth-child(3) {
-            background-color: #C6F5C2;
-        }
-
-        .popupBtn:nth-child(4) {
-            background-color: #D9FCD9;
-        }
-
-        .popupBtn:nth-child(5) {
-            background-color: #E2FFE2;
-        }
-
-        .popupBtn:nth-child(6) {
-            background-color: #F0FFF0;
-        }
-
-        .popupBtn i {
-            font-size: 28px;
-        }
-
-        .popupLabel {
-            margin-top: 8px;
-            font-size: 14px;
-            font-weight: bold;
-        }
 
         #closePopup {
             position: absolute;
