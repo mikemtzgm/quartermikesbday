@@ -18,7 +18,6 @@
             height: 100%;
             font-family: 'Arial', sans-serif;
             background-color: #f2f2f2;
-            /* gris claro */
         }
 
         #startScreen {
@@ -137,33 +136,32 @@
             animation: popIn 0.5s ease;
             position: relative;
         }
-.popupBtn {
-    background-color: #7FFF91; /* verde brat (ajústalo si quieres otro tono) */
-    padding: 20px;
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-    animation: subtleBounce 3s infinite;
-    text-decoration: none;
-    color: white;
-}
 
-.popupBtn i {
-    font-size: 28px;
-    color: white;
-}
+        .popupBtn {
+            background-color: white;
+            padding: 20px;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            animation: subtleBounce 3s infinite;
+            text-decoration: none;
+            color: black;
+            border: 2px solid #8ACE00;
+        }
 
-.popupLabel {
-    margin-top: 8px;
-    font-size: 14px;
-    font-weight: bold;
-    color: white;
-}
+        .popupBtn i {
+            font-size: 28px;
+        }
 
+        .popupLabel {
+            margin-top: 8px;
+            font-size: 14px;
+            font-weight: bold;
+        }
 
         #closePopup {
             position: absolute;
@@ -191,7 +189,6 @@
         }
 
         @keyframes subtleBounce {
-
             0%,
             100% {
                 transform: translateY(0);
@@ -203,7 +200,6 @@
         }
     </style>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-
 </head>
 
 <body>
@@ -230,34 +226,37 @@
             <br>
             <p><strong>Hour:</strong> 3 pm to 4 am</p>
             <br>
-            <p><strong>Place:</strong> <a href="https://g.co/kgs/9PbkDiH" target="_blank">Quinta Meade, Marin, NL</a>
-            </p>
+            <p><strong>Place:</strong> <a href="https://g.co/kgs/9PbkDiH" target="_blank">Quinta Meade, Marin, NL</a></p>
             <br>
             <p>was worth it cuz it was a fucking good night</p>
             <br>
-            <a class="btn" href="#" onclick="showPopup()">I'm in</a>
+            <a class="btn" href="#" onclick="showPopup()">To do list</a>
+            <br>
+            <a class="btn" href="https://wa.me/528119199676?text=See%20you%20at%20your%20crisis%20party" target="_blank" style="background-color: #457bb9;">I'm in bro</a>
+            <br>
+            <a class="btn" href="https://wa.me/528119199676?text=Sorry%20mike%2C%20cant%20go%2C%20protect%20the%20dolls" target="_blank" style="background-color: #e25252;">Sorry bro</a>
         </div>
     </div>
 
     <div id="popupOverlay">
         <div id="popupCard">
             <button id="closePopup">X</button>
-            <a class="popupBtn" href="https://www.innovasport.com/ropa-para-nadar/c/100020000010000000?srsltid=AfmBOorwLx3Q1nDoffgX3Ww_KBCWPdlLJ1_OKOy3OHz8WSiWgo9np2lS" target="_blank"><i class="fas fa-swimmer"></i>
+            <a class="popupBtn" href="https://youtu.be/BFH8NBHN42g?si=h0E54kjEc4tNfLO9" target="_blank"><i class="fas fa-swimmer"></i>
                 <div class="popupLabel">Pool</div>
             </a>
-            <a class="popupBtn" href="https://www.pinterest.com/redesignia/brat-and-indie-sleaze-mood-board/" target="_blank"><i class="fas fa-tshirt"></i>
+            <a class="popupBtn" href="https://pin.it/5akmeOmgP" target="_blank"><i class="fas fa-tshirt"></i>
                 <div class="popupLabel">Mood</div>
             </a>
-            <a class="popupBtn" href="https://open.spotify.com/playlist/5mZoCl9CMoUYwih4VXvBKo?si=bcfqPDvYRjm5AdGYWX357A" target="_blank"><i class="fas fa-music"></i>
+            <a class="popupBtn" href="https://open.spotify.com/playlist/7KOz7TH9NKQOPeCbzjkdqv?si=1cd1b5ac4fea42f0" target="_blank"><i class="fas fa-music"></i>
                 <div class="popupLabel">Vibe</div>
             </a>
-            <a class="popupBtn" href="https://es.wikipedia.org/wiki/Chili_dog" target="_blank"><i class="fas fa-hamburger"></i>
+            <a class="popupBtn" href="https://pbs.twimg.com/media/EZEVz68XgAIOFSK.jpg" target="_blank"><i class="fas fa-hamburger"></i>
                 <div class="popupLabel">Grill</div>
             </a>
-            <a class="popupBtn" href="https://www.mirockola.com.mx/rockolas-karaokef933.html?sort=pd.name&order=DESC" target="_blank"><i class="fas fa-microphone"></i>
+            <a class="popupBtn" href="https://open.spotify.com/playlist/5Wr8mbiR0Rablct4rMStTx?si=4a9781e1672e4d85" target="_blank"><i class="fas fa-microphone"></i>
                 <div class="popupLabel">Karaoke</div>
             </a>
-            <a class="popupBtn" href="https://www.heb.com.mx/vinos-licores-y-cervezas?srsltid=AfmBOootQGlSyEvFftdvURGAllLQePrK6GMLWrBJfdpv9cVNZeBXS8zU" target="_blank"><i class="fas fa-cocktail"></i>
+            <a class="popupBtn" href="https://pin.it/6DkN5mVzF" target="_blank"><i class="fas fa-cocktail"></i>
                 <div class="popupLabel">Drink</div>
             </a>
         </div>
